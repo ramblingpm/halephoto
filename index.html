@@ -49,8 +49,8 @@
 }
 </script>
 <style>
-  :root { --bg: #f7f6f3; --fg: #141413; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #141413; --fg: #f7f6f3; } }
+  :root { --bg: #f7f6f3; --fg: #141413; --icon: .5; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #141413; --fg: #f7f6f3; --icon: .4; } }
   html, body { margin: 0; background: var(--bg); }
   html { -webkit-text-size-adjust: 100%; }
   .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; margin: 0; }
@@ -107,11 +107,11 @@
     height: 44px;
     border-radius: 50%;
     color: var(--fg);
-    opacity: .3;
+    opacity: var(--icon); /* lowest values that still reach 3:1 contrast */
     transition: opacity .2s;
     -webkit-tap-highlight-color: transparent;
   }
-  .contact a:hover, .contact a:focus-visible { opacity: .75; }
+  .contact a:hover, .contact a:focus-visible { opacity: .8; }
   .contact a:focus-visible { outline: 1px solid currentColor; outline-offset: 2px; }
   .contact svg { width: 22px; height: 22px; }
 </style>
