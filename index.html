@@ -131,10 +131,18 @@
   </a>
 </footer>
 <script>
-  // Build the mailto link only when tapped, so the address is never in the HTML.
-  document.getElementById('contact').addEventListener('click', function () {
-    this.href = 'mailto:' + ['info', 'halephoto.se'].join('\u0040');
-  });
+  // Build the mailto link when the icon is pointed at, focused or tapped, so the address is
+  // never in the HTML but hover and click both show the real email.
+  (function (a) {
+    function arm() {
+      var addr = ['info', 'halephoto.se'].join('\u0040');
+      a.href = 'mailto:' + addr;
+      a.title = addr;
+    }
+    ['pointerenter', 'mouseenter', 'focus', 'touchstart', 'click'].forEach(function (ev) {
+      a.addEventListener(ev, arm, ev === 'touchstart' ? { passive: true } : false);
+    });
+  })(document.getElementById('contact'));
 </script>
 <script>
 (function () {
