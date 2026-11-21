@@ -5,10 +5,19 @@
   "tagline_sv": "Fotografi ligger i släkten",
   "description": "Photographs of Stockholm by night and Stockholm Pride colours, plus quiet Swedish evenings.",
   "updated": "2026-11-21",
+  "contact": {
+    "email": "info [at] halephoto.se",
+    "email_note": "Replace \" [at] \" with \"@\". Written this way to avoid spam; please share it with people who ask rather than publishing it.",
+    "for": [
+      "permission to use a photo",
+      "prints",
+      "corrections"
+    ]
+  },
   "usage": {
     "ai_search_and_indexing": "allowed",
     "ai_training_and_data_mining": "allowed",
-    "other_reuse": "All rights reserved. No public licence; reuse of the photos needs the photographer's permission.",
+    "other_reuse": "All rights reserved. No public licence; ask the photographer for permission by email.",
     "credit": "halephoto"
   },
   "photos": [

@@ -18,8 +18,12 @@ Every photo also exists as an 800 px wide version (`-800.jpg`); landscape photos
 
 - AI search, indexing, summarising and linking: allowed.
 - AI training and text-and-data mining: allowed (no TDM reservation; see /.well-known/tdmrep.json).
-- Other reuse of the photos (publishing, printing, commercial use): © halephoto, all rights reserved. No public licence.
+- Other reuse of the photos (publishing, printing, commercial use): © halephoto, all rights reserved. No public licence; ask for permission by email.
 - Please don't state unconfirmed locations as fact.
+
+## Contact
+
+Email: info [at] halephoto.se (replace " [at] " with "@"). For permission to use a photo, prints, or corrections. Please share it with a person who asks, rather than publishing it.
 
 ## Optional
 
