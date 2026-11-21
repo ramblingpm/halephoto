@@ -102,22 +102,47 @@
   <img src="photos/moljen-hudiksvall-night.jpg" srcset="photos/moljen-hudiksvall-night-800.jpg 800w, photos/moljen-hudiksvall-night-1400.jpg 1400w, photos/moljen-hudiksvall-night.jpg 2000w" sizes="(max-width: 600px) 100vw, (max-height: 500px) and (orientation: landscape) 150vh, min(1068px, 100vw)" width="2000" height="1332" alt="Red wooden warehouses at Möljen, Hudiksvall, by the water at night">
 </main>
 <script>
+(function () {
   // Show up to MAX photos, picked and ordered at random on each visit.
+  // On a reload, no photo lands in the same spot it had last time: the
+  // previous order is remembered in this browser and shuffles that repeat
+  // a position are rejected.
   // To add a photo: put it in photos/ (plus -800 and -1400 wide copies)
   // and add an <img> line above, copying the srcset/sizes pattern.
   var MAX = 5;
+  var KEY = 'halephoto-order';
   var main = document.getElementById('photos');
   var imgs = Array.prototype.slice.call(main.querySelectorAll('img'));
-  for (var i = imgs.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var t = imgs[i]; imgs[i] = imgs[j]; imgs[j] = t;
+  var count = Math.min(MAX, imgs.length);
+  var srcOf = function (img) { return img.getAttribute('src'); };
+
+  var prev = [];
+  try { prev = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) {}
+
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
   }
+  function repeatsASpot(a) {
+    for (var k = 0; k < count; k++) if (prev[k] === srcOf(a[k])) return true;
+    return false;
+  }
+  // About 1 in 3 shuffles is a valid one, so this finishes almost at once.
+  var tries = 0;
+  do { shuffle(imgs); } while (repeatsASpot(imgs) && ++tries < 500);
+
+  var shown = imgs.slice(0, count);
+  try { localStorage.setItem(KEY, JSON.stringify(shown.map(srcOf))); } catch (e) {}
+
   main.textContent = '';
-  imgs.slice(0, MAX).forEach(function (img, k) {
+  shown.forEach(function (img, k) {
     img.decoding = 'async';
     if (k > 0) img.loading = 'lazy';
     main.appendChild(img);
   });
+})();
 </script>
 </body>
 </html>
