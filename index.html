@@ -2,16 +2,24 @@
 <html lang="sv">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f6f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
 <title>halephoto</title>
 <style>
   :root { --bg: #f7f6f3; }
   @media (prefers-color-scheme: dark) { :root { --bg: #141413; } }
   html, body { margin: 0; background: var(--bg); }
+  html { -webkit-text-size-adjust: 100%; }
   main {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 6vh 16px;
+    padding:
+      max(6vh, env(safe-area-inset-top))
+      max(16px, env(safe-area-inset-right))
+      max(6vh, env(safe-area-inset-bottom))
+      max(16px, env(safe-area-inset-left));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,22 +29,42 @@
     display: block;
     max-width: 100%;
     max-height: 88vh;
+    max-height: 88svh; /* stable height while Safari's toolbar shows/hides */
     width: auto;
     height: auto;
+    -webkit-touch-callout: none;
+  }
+  /* Phones in portrait: photos edge to edge, tighter rhythm */
+  @media (max-width: 600px) {
+    main {
+      padding:
+        max(12px, env(safe-area-inset-top))
+        env(safe-area-inset-right)
+        max(24px, env(safe-area-inset-bottom))
+        env(safe-area-inset-left);
+      gap: 12px;
+    }
+    img { width: 100%; max-height: none; }
+  }
+  /* Phones in landscape: fit each photo to the short screen height */
+  @media (max-height: 500px) and (orientation: landscape) {
+    main { gap: 24px; }
+    img { max-height: calc(100svh - 32px); }
   }
 </style>
 </head>
 <body>
 <main id="photos">
-  <img src="photos/tower.jpg" width="1333" height="2000" alt="TV tower lit in rainbow colours at night">
-  <img src="photos/sunset-lake.jpg" width="2000" height="1333" alt="Red sunset over a forest lake">
-  <img src="photos/calm-lake.jpg" width="2000" height="1333" alt="Still lake with a red cottage under a cloudy sky">
-  <img src="photos/city-evening.jpg" width="2000" height="1333" alt="Stockholm waterfront at dusk">
-  <img src="photos/warehouses.jpg" width="2000" height="1332" alt="Red wooden warehouses by the water at night">
+  <img src="photos/tower.jpg" srcset="photos/tower-800.jpg 800w, photos/tower.jpg 1333w" sizes="(max-width: 600px) 100vw, 60vh" width="1333" height="2000" alt="TV tower lit in rainbow colours at night">
+  <img src="photos/sunset-lake.jpg" srcset="photos/sunset-lake-800.jpg 800w, photos/sunset-lake-1400.jpg 1400w, photos/sunset-lake.jpg 2000w" sizes="(max-width: 600px) 100vw, (max-height: 500px) and (orientation: landscape) 150vh, min(1068px, 100vw)" width="2000" height="1333" alt="Red sunset over a forest lake">
+  <img src="photos/calm-lake.jpg" srcset="photos/calm-lake-800.jpg 800w, photos/calm-lake-1400.jpg 1400w, photos/calm-lake.jpg 2000w" sizes="(max-width: 600px) 100vw, (max-height: 500px) and (orientation: landscape) 150vh, min(1068px, 100vw)" width="2000" height="1333" alt="Still lake with a red cottage under a cloudy sky">
+  <img src="photos/city-evening.jpg" srcset="photos/city-evening-800.jpg 800w, photos/city-evening-1400.jpg 1400w, photos/city-evening.jpg 2000w" sizes="(max-width: 600px) 100vw, (max-height: 500px) and (orientation: landscape) 150vh, min(1068px, 100vw)" width="2000" height="1333" alt="Stockholm waterfront at dusk">
+  <img src="photos/warehouses.jpg" srcset="photos/warehouses-800.jpg 800w, photos/warehouses-1400.jpg 1400w, photos/warehouses.jpg 2000w" sizes="(max-width: 600px) 100vw, (max-height: 500px) and (orientation: landscape) 150vh, min(1068px, 100vw)" width="2000" height="1332" alt="Red wooden warehouses by the water at night">
 </main>
 <script>
   // Show up to MAX photos, picked and ordered at random on each visit.
-  // To add a photo: put it in photos/ and add an <img> line above.
+  // To add a photo: put it in photos/ (plus -800 and -1400 wide copies)
+  // and add an <img> line above, copying the srcset/sizes pattern.
   var MAX = 5;
   var main = document.getElementById('photos');
   var imgs = Array.prototype.slice.call(main.querySelectorAll('img'));
@@ -46,6 +74,7 @@
   }
   main.textContent = '';
   imgs.slice(0, MAX).forEach(function (img, k) {
+    img.decoding = 'async';
     if (k > 0) img.loading = 'lazy';
     main.appendChild(img);
   });
