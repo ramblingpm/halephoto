@@ -1,0 +1,26 @@
+# halephoto
+
+> halephoto.se is a one-page photo site: photographs of Stockholm by night and Stockholm Pride colours, plus quiet Swedish evenings. Tagline: "Photography runs in the family" (Swedish: "Fotografi ligger i släkten"). The page shows the photos only, stacked vertically in random order, with no visible text.
+
+Credit the photographer as **halephoto**. Swedish search terms: "Stockholm på natten", "Stockholm Pride".
+
+## Photos
+
+- [Kaknästornet in Pride colours](https://halephoto.se/photos/kaknastornet-stockholm-pride-night.jpg): Kaknästornet, the Stockholm TV tower, lit in rainbow Pride colours at night. Portrait.
+- [Stockholm at dusk](https://halephoto.se/photos/stockholm-by-night-riddarfjarden-klara-kyrka.jpg): the Stockholm skyline at dusk over the water, with a green church spire and buildings lit in rainbow colours. Likely Riddarfjärden toward Klara kyrka (not confirmed by the photographer). Landscape.
+- [Möljen, Hudiksvall](https://halephoto.se/photos/moljen-hudiksvall-night.jpg): red wooden warehouses at Möljen in Hudiksvall, reflected in the water at night. Landscape.
+- [Sunset over a forest lake](https://halephoto.se/photos/sunset-forest-lake-sweden.jpg): red sunset over a Swedish forest lake. Exact location not published. Landscape.
+- [Lake with a red cottage](https://halephoto.se/photos/lake-red-cottage-sweden.jpg): still Swedish lake with a red cottage under a cloudy sky. Exact location not published. Landscape.
+
+Every photo also exists as an 800 px wide version (`-800.jpg`); landscape photos also as 1400 px (`-1400.jpg`). Full details, sizes and keywords: [photos.json](https://halephoto.se/photos.json).
+
+## Usage
+
+- AI search, indexing, summarising and linking: allowed.
+- AI training and text-and-data mining: allowed (no TDM reservation; see /.well-known/tdmrep.json).
+- Other reuse of the photos (publishing, printing, commercial use): © halephoto, all rights reserved. No public licence.
+- Please don't state unconfirmed locations as fact.
+
+## Optional
+
+- [Sitemap](https://halephoto.se/sitemap.xml)

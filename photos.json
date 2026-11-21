@@ -1,0 +1,195 @@
+{
+  "name": "halephoto",
+  "url": "https://halephoto.se/",
+  "tagline": "Photography runs in the family",
+  "tagline_sv": "Fotografi ligger i släkten",
+  "description": "Photographs of Stockholm by night and Stockholm Pride colours, plus quiet Swedish evenings.",
+  "updated": "2026-11-21",
+  "usage": {
+    "ai_search_and_indexing": "allowed",
+    "ai_training_and_data_mining": "allowed",
+    "other_reuse": "All rights reserved. No public licence; reuse of the photos needs the photographer's permission.",
+    "credit": "halephoto"
+  },
+  "photos": [
+    {
+      "id": "kaknastornet-stockholm-pride-night",
+      "title": "Kaknästornet, the Stockholm TV tower, lit in rainbow Pride colours at night",
+      "url": "https://halephoto.se/photos/kaknastornet-stockholm-pride-night.jpg",
+      "width": 1333,
+      "height": 2000,
+      "orientation": "portrait",
+      "sizes": [
+        {
+          "width": 800,
+          "url": "https://halephoto.se/photos/kaknastornet-stockholm-pride-night-800.jpg"
+        },
+        {
+          "width": 1333,
+          "url": "https://halephoto.se/photos/kaknastornet-stockholm-pride-night.jpg"
+        }
+      ],
+      "location": {
+        "place": "Kaknästornet",
+        "city": "Stockholm",
+        "country": "Sweden",
+        "confidence": "certain"
+      },
+      "keywords": [
+        "Stockholm",
+        "Stockholm Pride",
+        "Stockholm by night",
+        "Kaknästornet",
+        "rainbow",
+        "night photography"
+      ],
+      "creator": "halephoto",
+      "copyright": "© halephoto"
+    },
+    {
+      "id": "sunset-forest-lake-sweden",
+      "title": "Red sunset over a Swedish forest lake",
+      "url": "https://halephoto.se/photos/sunset-forest-lake-sweden.jpg",
+      "width": 2000,
+      "height": 1333,
+      "orientation": "landscape",
+      "sizes": [
+        {
+          "width": 800,
+          "url": "https://halephoto.se/photos/sunset-forest-lake-sweden-800.jpg"
+        },
+        {
+          "width": 1400,
+          "url": "https://halephoto.se/photos/sunset-forest-lake-sweden-1400.jpg"
+        },
+        {
+          "width": 2000,
+          "url": "https://halephoto.se/photos/sunset-forest-lake-sweden.jpg"
+        }
+      ],
+      "location": {
+        "place": null,
+        "city": null,
+        "country": "Sweden",
+        "confidence": "only the country is known"
+      },
+      "keywords": [
+        "sunset",
+        "lake",
+        "forest",
+        "Sweden"
+      ],
+      "creator": "halephoto",
+      "copyright": "© halephoto"
+    },
+    {
+      "id": "lake-red-cottage-sweden",
+      "title": "Still Swedish lake with a red cottage under a cloudy sky",
+      "url": "https://halephoto.se/photos/lake-red-cottage-sweden.jpg",
+      "width": 2000,
+      "height": 1333,
+      "orientation": "landscape",
+      "sizes": [
+        {
+          "width": 800,
+          "url": "https://halephoto.se/photos/lake-red-cottage-sweden-800.jpg"
+        },
+        {
+          "width": 1400,
+          "url": "https://halephoto.se/photos/lake-red-cottage-sweden-1400.jpg"
+        },
+        {
+          "width": 2000,
+          "url": "https://halephoto.se/photos/lake-red-cottage-sweden.jpg"
+        }
+      ],
+      "location": {
+        "place": null,
+        "city": null,
+        "country": "Sweden",
+        "confidence": "only the country is known"
+      },
+      "keywords": [
+        "lake",
+        "red cottage",
+        "Sweden"
+      ],
+      "creator": "halephoto",
+      "copyright": "© halephoto"
+    },
+    {
+      "id": "stockholm-by-night-riddarfjarden-klara-kyrka",
+      "title": "Stockholm at dusk over Riddarfjärden, with Klara kyrka and buildings lit in rainbow colours",
+      "url": "https://halephoto.se/photos/stockholm-by-night-riddarfjarden-klara-kyrka.jpg",
+      "width": 2000,
+      "height": 1333,
+      "orientation": "landscape",
+      "sizes": [
+        {
+          "width": 800,
+          "url": "https://halephoto.se/photos/stockholm-by-night-riddarfjarden-klara-kyrka-800.jpg"
+        },
+        {
+          "width": 1400,
+          "url": "https://halephoto.se/photos/stockholm-by-night-riddarfjarden-klara-kyrka-1400.jpg"
+        },
+        {
+          "width": 2000,
+          "url": "https://halephoto.se/photos/stockholm-by-night-riddarfjarden-klara-kyrka.jpg"
+        }
+      ],
+      "location": {
+        "place": "Riddarfjärden",
+        "city": "Stockholm",
+        "country": "Sweden",
+        "confidence": "likely, not confirmed by the photographer"
+      },
+      "keywords": [
+        "Stockholm",
+        "Stockholm by night",
+        "Stockholm Pride",
+        "Riddarfjärden",
+        "Klara kyrka",
+        "night photography"
+      ],
+      "creator": "halephoto",
+      "copyright": "© halephoto"
+    },
+    {
+      "id": "moljen-hudiksvall-night",
+      "title": "Red wooden warehouses at Möljen, Hudiksvall, by the water at night",
+      "url": "https://halephoto.se/photos/moljen-hudiksvall-night.jpg",
+      "width": 2000,
+      "height": 1332,
+      "orientation": "landscape",
+      "sizes": [
+        {
+          "width": 800,
+          "url": "https://halephoto.se/photos/moljen-hudiksvall-night-800.jpg"
+        },
+        {
+          "width": 1400,
+          "url": "https://halephoto.se/photos/moljen-hudiksvall-night-1400.jpg"
+        },
+        {
+          "width": 2000,
+          "url": "https://halephoto.se/photos/moljen-hudiksvall-night.jpg"
+        }
+      ],
+      "location": {
+        "place": "Möljen",
+        "city": "Hudiksvall",
+        "country": "Sweden",
+        "confidence": "certain"
+      },
+      "keywords": [
+        "Hudiksvall",
+        "Möljen",
+        "night photography",
+        "Sweden"
+      ],
+      "creator": "halephoto",
+      "copyright": "© halephoto"
+    }
+  ]
+}
