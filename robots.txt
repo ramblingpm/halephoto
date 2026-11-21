@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://halephoto.se/sitemap.xml
