@@ -27,13 +27,28 @@
 </style>
 </head>
 <body>
-<main>
-  <img src="photos/01.jpg" width="2000" height="1333" alt="Photo 1">
-  <img src="photos/02.jpg" width="1333" height="2000" alt="Photo 2" loading="lazy">
-  <img src="photos/03.jpg" width="2000" height="2000" alt="Photo 3" loading="lazy">
-  <img src="photos/04.jpg" width="2000" height="1333" alt="Photo 4" loading="lazy">
-  <img src="photos/05.jpg" width="1333" height="2000" alt="Photo 5" loading="lazy">
-  <img src="photos/06.jpg" width="2000" height="1333" alt="Photo 6" loading="lazy">
+<main id="photos">
+  <img src="photos/tower.jpg" width="1333" height="2000" alt="TV tower lit in rainbow colours at night">
+  <img src="photos/sunset-lake.jpg" width="2000" height="1333" alt="Red sunset over a forest lake">
+  <img src="photos/calm-lake.jpg" width="2000" height="1333" alt="Still lake with a red cottage under a cloudy sky">
+  <img src="photos/city-evening.jpg" width="2000" height="1333" alt="Stockholm waterfront at dusk">
+  <img src="photos/warehouses.jpg" width="2000" height="1332" alt="Red wooden warehouses by the water at night">
 </main>
+<script>
+  // Show up to MAX photos, picked and ordered at random on each visit.
+  // To add a photo: put it in photos/ and add an <img> line above.
+  var MAX = 5;
+  var main = document.getElementById('photos');
+  var imgs = Array.prototype.slice.call(main.querySelectorAll('img'));
+  for (var i = imgs.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = imgs[i]; imgs[i] = imgs[j]; imgs[j] = t;
+  }
+  main.textContent = '';
+  imgs.slice(0, MAX).forEach(function (img, k) {
+    if (k > 0) img.loading = 'lazy';
+    main.appendChild(img);
+  });
+</script>
 </body>
 </html>
